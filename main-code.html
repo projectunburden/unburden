@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unburden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Nanum Myeongjo', serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background-color: #fefee3;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .header {
+            background-color: #ceebe4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: relative;
+            z-index: 10;
+        }
+        @media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .logo {
+        max-width: 80%; /* Ensures the logo scales properly */
+    }
+ 
+    .nav {
+        display: flex;
+        flex-direction: column; /* Stack nav links */
+        gap: 10px;
+    }
+}
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-buttons button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            font-weight: 400;
+            font-family: 'Nanum Myeongjo', serif;
+            transition: transform 0.2s ease, color 0.3s ease;
+        }
+        .nav-buttons button:hover {
+            transform: scale(1.1);
+            color: #2b453f;
+        }
+        .blur-wrapper {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fefee3;
+            position: relative;
+        }
+        .content {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .content-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: -30px;
+        }
+
+        /* Slide-in and Fade-in Animation */
+        @keyframes slideFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .main-text, .button-box, .sub-text, .small-button {
+            opacity: 0;
+            animation: slideFadeIn 1s ease-in-out forwards;
+        }
+        .main-text {
+            animation-delay: 0.2s;
+        }
+        .button-box {
+            animation-delay: 0.4s;
+        }
+        .sub-text {
+            animation-delay: 0.6s;
+        }
+        .small-button {
+            animation-delay: 0.8s;
+        }
+
+        .main-text {
+            font-size: 32px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-style: italic;
+            color: #2b453f;
+            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .button-box {
+            background-color: #ceebe4;
+            border-radius: 12px;
+            padding: 12px 45px;
+            font-size: 24px;
+            font-family: 'Nanum Myeongjo', serif;
+            color: black;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            border: none;
+        }
+        .button-box:hover {
+            background-color: #b0d7cb;
+            transform: scale(1.05);
+        }
+        .sub-text {
+            font-size: 26px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-style: italic;
+            color: black;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .small-button {
+            background-color: #ceebe4;
+            border-radius: 12px;
+            padding: 8px 30px;
+            font-size: 18px;
+            font-family: 'Nanum Myeongjo', serif;
+            color: black;
+            margin-top: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            border: none;
+        }
+        .small-button:hover {
+            background-color: #b0d7cb;
+            transform: scale(1.05);
+        }
+        .footer {
+            background-color: #f4f4f4;
+            padding: 20px;
+            font-size: 14px;
+            width: 100%;
+        }
+        /* Full-screen preloader */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8e8; /* Match your site background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Cool spinning effect */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #2b453f;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    
+    <header class="header">
+        <div class="logo">UNBURDEN</div>
+        <div class="nav-buttons">
+            <button onclick="redirectTo('https://forms.gle/xsjvJj8MqA8Ps3mz9')">Share your story</button>
+            <button onclick="redirectTo('https://forms.gle/32sEcLxaoQ2kcd9o6')">Apply</button>
+            <button onclick="redirectToAbout()">About</button> <!-- Updated to redirect with fade-in -->
+        </div>
+    </header>
+    
+    <div class="blur-wrapper">
+        <div class="content">
+            <div class="content-inner">
+                <p class="main-text">Heavy hearts deserve light words—unburden, and we'll hold your truth with care.</p>
+                <!-- Updated "Unburden" button to link to the second code -->
+                <button class="button-box" onclick="redirectTo('second-code.html')">Unburden</button>
+                <p class="sub-text">Want someone to talk to?</p>
+                <button class="small-button" onclick="redirectTo('https://forms.gle/3KKQ1urMUZq14pFW6')">Here</button>
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+            <p>© 2024 Unburden. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+        function redirectToAbout() {
+            // Add fade-out effect before redirecting
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'about.html';
+            }, 500); // Wait for the fade-out animation to complete
+        }
+
+        // Add fade-in effect when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+    <script>
+        window.addEventListener("load", function() {
+            document.getElementById("preloader").style.display = "none";
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Project Unburden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    min-height: 100vh; /* Ensures full height */
+    text-align: center; /* Centers all text */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Ensures content is fully centered */
+    width: 90%;
+    max-width: 900px;
+}
+
+}
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 900px;
+            width: 90%;
+        }
+        .section {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 28px;
+            color: #2b453f;
+            font-family: 'Nanum Myeongjo', serif;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: black;
+            margin: 0;
+        }
+        .contact-social {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .contact, .social {
+            width: 48%;
+        }
+        .social {
+            display: flex;
+            justify-content: space-between;
+        }
+        .social div {
+            text-align: center;
+        }
+        .social a {
+            text-decoration: none;
+            color: #2b453f;
+            font-weight: bold;
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 20px;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .social a:hover {
+            color: #1a2e25;
+            transform: scale(1.1);
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .contact-social {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact, .social {
+        width: 100%;
+    }
+
+    .social {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>ABOUT</h1>
+            <p>A completely free website where you could open your heart and we’ll hear with no judgment. Feel free to share anything and everything and we will try to help as much as we can.</p>
+        </div>
+        <div class="section">
+            <h1>AIM</h1>
+            <p>To create a safe, judgment-free digital sanctuary where anyone can open their heart, share their thoughts, and be truly heard. Whether it’s your deepest fears, untold dreams, or everyday struggles, we’re here to listen, support, and uplift—completely free, always compassionate. No filters, no fear, just understanding.</p>
+        </div>
+        <div class="contact-social">
+            <div class="contact">
+                <h1>CONTACT</h1>
+                <p><strong>Mail:</strong><br>projectunburden@gmail.com</p>
+            </div>
+            <div class="social">
+                <div>
+                    <h1><a href="https://www.instagram.com/projectunburden/?utm_source=ig_web_button_share_sheet" target="_blank">Instagram</a></h1>
+                    <p>@projectunburden</p>
+                </div>
+                <div>
+                    <h1><a href="https://www.tiktok.com/@projectunburden?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></h1>
+                    <p>@projectunburden</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
